@@ -15,12 +15,12 @@ function App() {
     <>
       <div>
         <h1>User Profiles</h1>
-        <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
-        <UserProfile
+        <UserProfile name="Alice" Age="25" Bio="Loves hiking and photography" />
+        {/* <UserProfile
           name="Bob"
-          age="30"
-          bio="Avid traveler and tech enthusiast"
-        />
+          Age="30"
+          Bio="Avid traveler and tech enthusiast"
+        /> */}
       </div>
       <div>
         <WelcomeMessage />
