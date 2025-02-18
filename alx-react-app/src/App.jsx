@@ -7,7 +7,7 @@ import MainContent from "./components/MainContent";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import UserProfile from "./components/UserProfile";
-import React, { useState } from "react";
+import React from "react";
 function App() {
   const [count, setCount] = useState(0);
 
