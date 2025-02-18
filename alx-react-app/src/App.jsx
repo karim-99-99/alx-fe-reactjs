@@ -6,11 +6,22 @@ import WelcomeMessage from "./components/WelcomeMessage";
 import MainContent from "./components/MainContent";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import UserProfile from "./components/UserProfile";
+
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
+      <div>
+        <h1>User Profiles</h1>
+        <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
+        <UserProfile
+          name="Bob"
+          age="30"
+          bio="Avid traveler and tech enthusiast"
+        />
+      </div>
       <div>
         <WelcomeMessage />
         <Header />
