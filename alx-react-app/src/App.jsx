@@ -7,7 +7,7 @@ import MainContent from "./components/MainContent";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import UserProfile from "./components/UserProfile";
-
+import React, { useState } from "react";
 function App() {
   const [count, setCount] = useState(0);
 
@@ -16,11 +16,6 @@ function App() {
       <div>
         <h1>User Profiles</h1>
         <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
-        {/* <UserProfile
-          name="Bob"
-          Age="30"
-          Bio="Avid traveler and tech enthusiast"
-        /> */}
       </div>
       <div>
         <WelcomeMessage />
