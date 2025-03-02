@@ -32,6 +32,7 @@ const Navbar = () => {
 
 const styles = {
   navbar: {
+    backgroundColor: "redirect",
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
@@ -43,6 +44,7 @@ const styles = {
     margin: 0,
   },
   navLinks: {
+    backgroundColor: "redirect",
     listStyle: "none",
     display: "flex",
     gap: "20px",
@@ -50,6 +52,7 @@ const styles = {
     padding: 0,
   },
   link: {
+    backgroundColor: "redirect",
     color: "white",
     textDecoration: "none",
     fontSize: "18px",
