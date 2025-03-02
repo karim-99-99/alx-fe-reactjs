@@ -14,9 +14,9 @@ import UserContext from "./components/UserContext";
 function App() {
   const [count, setCount] = useState(0);
   const userData = { name: "Jane Doe", email: "jane.doe@example.com" };
-  return <UserContext.provider value={userData}>
+  return <UserContext.Provider value={userData}>
           <ProfilePage  />;
-         </UserContext.provider> 
+         </UserContext.Provider> 
   
   //   <>
   //     <div>
