@@ -1,8 +1,8 @@
-import useRecipeStore from "../storage/useRecipeStore";
+import recipeStore from "./recipeStore";
 
 const RecommendationsList = () => {
-  const recommendations = useRecipeStore((state) => state.recommendations);
-  const generateRecommendations = useRecipeStore(
+  const recommendations = recipeStore((state) => state.recommendations);
+  const generateRecommendations = recipeStore(
     (state) => state.generateRecommendations
   );
 

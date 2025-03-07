@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import useRecipeStore from "../storage/useRecipeStore";
+import recipeStore from "./recipeStore"
 
 const RecipeList = () => {
-  const filteredRecipes = useRecipeStore((state) => state.filteredRecipes);
-  const searchTerm = useRecipeStore((state) => state.searchTerm);
-  const setSearchTerm = useRecipeStore((state) => state.setSearchTerm);
+  const filteredRecipes = recipeStore((state) => state.filteredRecipes);
+  const searchTerm = recipeStore((state) => state.searchTerm);
+  const setSearchTerm = recipeStore((state) => state.setSearchTerm);
   
 
   return (
