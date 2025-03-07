@@ -15,9 +15,9 @@ const App = () => (
       <Route path="/recipe/:recipeId" element={<RecipeDetails />} />
     </Routes>
   </Router>
-    
+{/*     
     <RecipeList />
-    <AddRecipeForm />
+    <AddRecipeForm /> */}
   </div>
 );
 
