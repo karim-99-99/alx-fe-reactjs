@@ -1,5 +1,5 @@
-import RecipeList from "../RecipeList";
-import AddRecipeForm from "../AddRecipeForm";
+import RecipeList from "./RecipeList";
+import AddRecipeForm from "./AddRecipeForm";
 import DeleteRecipeButton from "./DeleteRecipeButton";
 
 const Home = () => {
