@@ -1,9 +1,10 @@
 import React from 'react'
 import recipeStore from "./recipeStore"
+import useRecipeStore from "./recipeStore";
 
 
 const FavouriteList = () => {
-    const favourites = recipeStore(state => state.favourites.map(id => 
+    const favourites = useRecipeStore(state => state.favourites.map(id => 
     state.recipes.find(recipe => recipe.id === id)
 
     ));
