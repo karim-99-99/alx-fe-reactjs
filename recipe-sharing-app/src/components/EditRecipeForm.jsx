@@ -1,5 +1,6 @@
 import { useState } from "react";
 import recipeStore from "./recipeStore"
+import useRecipeStore from "./recipeStore";
 
 const EditRecipeForm = ({recipe}) => {
     const [updatedRecipe, setUpdatedRecipe] = useState({
@@ -7,15 +8,15 @@ const EditRecipeForm = ({recipe}) => {
         description: recipe.description, 
         ingredients: recipe.ingredients || "", // Ensure ingredients exist
     });
-    const updateRecipe = recipeStore ((state) => state.updateRecipe);
+    const updateRecipe = useRecipeStore ((state) => state.updateRecipe);
 
     const handleChange = (e) => {
         setUpdatedRecipe({...updatedRecipe, [e.target.name] : e.target.value });
 
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleSubmit = (event) => {
+      event.preventDefault();
         updateRecipe(recipe.id, {
             ...updatedRecipe
         })
