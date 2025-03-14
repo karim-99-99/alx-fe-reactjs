@@ -18,19 +18,19 @@ setInput(prevState=> ({...prevState,[name]: value}));
             <input 
             type="text"
             name="name"
-            value={input.name}
+            value={username}
             onChange={handleChange}
             />
             <input 
             type="email"
             name="email"
-            value={input.email}
+            value={email}
             onChange={handleChange}
             />
             <input 
             type="password"
             name="password"
-            value={input.password}
+            value={password}
             onChange={handleChange}
             />
             <button type="submit">Submit</button>
