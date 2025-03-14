@@ -12,13 +12,13 @@ setInput(prevState=> ({...prevState,[name]: value}));
         e.preventDefault();
         let newErrors = {}
 
-        if(!username) {
+        if (!username) {
             newErrors.username = "Username is required";
         }
-        if(email) {
+        if (!email) {
             newErrors.email = "email is required";
         }
-        if(password) {
+        if (!password) {
             newErrors.password= "password is required"
         }
         setErrors(newErrors);
