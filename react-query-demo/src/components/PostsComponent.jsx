@@ -9,9 +9,12 @@ const fetchData = async () => {
 const ReactQuery = () => {
 //handle Data Fetching and Caching
 
-const { fetchPosts, isError, isLoading } = useQuery({
+const { data, isError, isLoading } = useQuery({
     queryKey: ["fetchData"], 
-    queryFn: fetchData
+    queryFn: fetchData,
+    staleTime: 1000 * 60 * 5, // Data remains fresh for 5 minutes
+    cacheTime: 1000 * 60 * 10, // Cache remains for 10 minutes
+    refetchOnWindowFocus: false, // Prevent refetching when switching tabs
   });
   
     //handling Loading state
@@ -23,7 +26,7 @@ if(isError) return <div> Error loading data</div>
 //Render the fetch data
 return (
     <div>
-        {fetchPosts.map(item => (
+        {data.map(item => (
             <div key={item.id}>{item.title}</div>
         ))}
     </div>
