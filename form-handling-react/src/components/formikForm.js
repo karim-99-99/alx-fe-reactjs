@@ -7,7 +7,7 @@ const SignupForm = () => {
     <Formik
       initialValues={{ name: '', email: '', password: '' }}
       validationSchema={Yup.object({
-        name: Yup.string()
+        name: Yup.string().required
           .max(15, 'Must be 15 characters or less')
           .required('Required'),
         
