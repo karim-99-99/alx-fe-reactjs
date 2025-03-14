@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const RegistrationForm = () => {
     const [input,setInput] =useState( { username: '' , email: '' , password: ''})
-    const[error,setError] = useState({});
+    const[error,setErrors] = useState({});
     const handleChange = (e) => {
 const {name , value} = e.target;
 setInput(prevState=> ({...prevState,[name]: value}));
@@ -12,16 +12,16 @@ setInput(prevState=> ({...prevState,[name]: value}));
         e.preventDefault();
         let newErrors = {}
 
-        if(!input.username.trim()) {
+        if(!username) {
             newErrors.username = "Username is required";
         }
-        if(!input.email.trim()) {
+        if(email) {
             newErrors.email = "email is required";
         }
-        if(!input.password.trim()) {
+        if(password) {
             newErrors.password= "password is required"
         }
-        setError(newErrors);
+        setErrors(newErrors);
         console.log(input);
     };
   
