@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import {BrowserRouter as Router , Route, Link, Routes } from 'react-router-dom'; 
-import Profile  from './components/Profile '
+import Profile  from './components/Profile'
 // import ProfileDetails from './pages/ProfileDetails ';
 // import ProfileSettings from './pages/ProfileSettings';
 function App() {
