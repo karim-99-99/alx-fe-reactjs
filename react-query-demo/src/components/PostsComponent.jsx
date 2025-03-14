@@ -9,7 +9,7 @@ const fetchData = async () => {
 const ReactQuery = () => {
 //handle Data Fetching and Caching
 
-const { data, isError, fetchPosts } = useQuery({
+const { data, isError, isLoading } = useQuery({
     queryKey: ["fetchData"], 
     queryFn: fetchData,
     staleTime: 1000 * 60 * 5, // Data remains fresh for 5 minutes
@@ -18,7 +18,7 @@ const { data, isError, fetchPosts } = useQuery({
   });
   
     //handling Loading state
-    if (fetchPosts) return <div>Loading ...</div>
+    if (isLoading) return <div>Loading ...</div>
 // handling error state
 
 if(isError) return <div> Error loading data</div>
