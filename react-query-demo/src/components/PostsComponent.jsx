@@ -15,6 +15,8 @@ const { data, isError, isLoading } = useQuery({
     staleTime: 1000 * 60 * 5, // Data remains fresh for 5 minutes
     cacheTime: 1000 * 60 * 10, // Cache remains for 10 minutes
     refetchOnWindowFocus: false, // Prevent refetching when switching tabs
+    keepPreviousData: true, // Ensures old data stays visible while fetching new data
+
   });
   
     //handling Loading state
