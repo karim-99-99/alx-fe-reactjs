@@ -15,7 +15,7 @@ const isAuthenticated = () =>  localStorage.getItem('authToken') != null;
     //login componant
  const login =() => {
             const handleLogin = () => {
-                localStorage.setItem('autoToken' , 'your-token');
+                localStorage.setItem('useAut' , 'your-token');
                 window.location.href = '/dashboard';
             };
 
