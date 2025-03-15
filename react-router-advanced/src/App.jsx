@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import {BrowserRouter as Router , Route, Link, Routes } from 'react-router-dom'; 
 import Profile  from './components/Profile'
+import Blog from './components/Blog';
+import BlogPost from './components/BlogPost';
 // import ProfileDetails from './pages/ProfileDetails ';
 // import ProfileSettings from './pages/ProfileSettings';
 function App() {
@@ -17,9 +19,15 @@ function App() {
              <Link to="/">Home</Link>
             {/* <Link to="/about">About</Link>  */}
             <Link to="/Profile">About</Link>
+            <Link to="/blog">Blog</Link>
 
           </nav>
           <Routes>
+            {/* Blog listing page */}
+            <Route path="/blog" element={<Blog />} />
+
+            {/* Dynamic blog post route */}
+            <Route path="/blog/:postId" element={<BlogPost />} />
             {/* <Route path="/" element ={<Home />} />
             <Route path="/about" element={<About />} /> */}
             <Route path="/profile/*" element={<Profile />} />
