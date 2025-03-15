@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import Profile from "./components/Profile";
 import Blog from "./components/Blog";
 import BlogPost from "./components/BlogPost";
+import ProtectedRoute from "./components/ProtectedRoute";
 // import ProfileDetails from './pages/ProfileDetails ';
 // import ProfileSettings from './pages/ProfileSettings';
 function App() {
@@ -14,6 +15,7 @@ function App() {
   return (
     <>
       <div>
+        <ProtectedRoute />
         <Router>
           <nav>
             <Link to="/">Home</Link>
