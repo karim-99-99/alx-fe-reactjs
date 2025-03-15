@@ -9,13 +9,14 @@ const isAuthenticated = () =>  localStorage.getItem('authToken') != null;
 
     //customize privage route 
     const PrivateRoute =({element}) => {
-        return isAuthenticated() ? element : <Navigate to="/registeration" />
+        const { isAuthenticated } = useAuth();
+        return isAuthenticated() ? element : <Navigate to="/registration" />
     }
 
     //login componant
  const login =() => {
             const handleLogin = () => {
-                localStorage.setItem('useAut' , 'your-token');
+                localStorage.setItem('authToken' , 'your-token');
                 window.location.href = '/dashboard';
             };
 
@@ -30,7 +31,7 @@ const ProtectedRoutes =() => (
   <Router>
   <Routes>
     <Route path="/" element= {<h2>Home</h2>} />
-    <Route path="/registeration" element={<RegistrationForm />} />
+    <Route path="/registration" element={<RegistrationForm />} />
     <Route path="/dashboard" element={<PrivateRoute element={<Dashboard />} />} />
     </Routes>  
   </Router>
