@@ -1,33 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import {BrowserRouter as Router , Route, Link, Routes } from 'react-router-dom'; 
-import Profile  from './components/Profile'
-import Blog from './components/Blog';
-import BlogPost from './components/BlogPost';
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
+import Profile from "./components/Profile";
+import Blog from "./components/Blog";
+import BlogPost from "./components/BlogPost";
 // import ProfileDetails from './pages/ProfileDetails ';
 // import ProfileSettings from './pages/ProfileSettings';
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
       <div>
         <Router>
           <nav>
-             <Link to="/">Home</Link>
+            <Link to="/">Home</Link>
             {/* <Link to="/about">About</Link>  */}
             <Link to="/Profile">About</Link>
             <Link to="/blog">Blog</Link>
-
           </nav>
           <Routes>
             {/* Blog listing page */}
             <Route path="/blog" element={<Blog />} />
 
             {/* Dynamic blog post route */}
-            <Route path="/blog/:postId" element={<BlogPost />} />
+            <Route path="/blog/:Id" element={<BlogPost />} />
             {/* <Route path="/" element ={<Home />} />
             <Route path="/about" element={<About />} /> */}
             <Route path="/profile/*" element={<Profile />} />
@@ -56,7 +55,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
