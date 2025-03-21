@@ -1,0 +1,15 @@
+[
+    {
+      "id": 1,
+      "title": "Spaghetti Carbonara",
+      "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+      "image": "https://www.cookingclassy.com/wp-content/uploads/2020/10/roasted-spaghetti-squash-browned-butter-20.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Chicken Tikka Masala",
+      "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
+      "image": "https://www.cookinwithmima.com/wp-content/uploads/2022/07/chicken-spaghetti-bolognese.jpg"
+    }
+  ]
+  
