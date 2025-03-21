@@ -13,7 +13,7 @@ const HomePage = () => {
   return (
     <div>
       <h1 className="text-5xl font-bold mb-7">Recipes List</h1>
-      <div className="grid sm:grid-cols-2 justify-center gap-20 sm:max-w-3xl">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  justify-center gap-20 sm:max-w-3xl">
         {recipes.map((recipe) => (
           <div key={recipe.id} className="shadow-lg bg-slate-100 rounded-sm ">
             <img
