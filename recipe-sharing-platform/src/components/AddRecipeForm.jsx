@@ -2,8 +2,12 @@ import { useState } from "react"
 
 const AddRecipeForm = () => {
  const [input ,setInput] = useState({title:"" , ingredients:"" , steps:""});
-const handleChange = (e) => {
-const {name , value} =e.target
+// const handleChange = (e) => {
+// const {name , value} =e.target
+const handleChange = (event) => {
+  const target = event.target; // Extract target from event
+  const value = target.value;  // Extract value from target
+  const name = target.name;    // Extract name attribute
 setInput((prevState) => ({ ...prevState, [name]: value }));
 }
 const handleSubmit = (e) => {
