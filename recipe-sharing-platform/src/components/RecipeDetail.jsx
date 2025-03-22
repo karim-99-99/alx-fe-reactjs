@@ -26,7 +26,7 @@ const RecipeDetail = () => {
    
     <div className=" justify-stretch mx-auto grid grid-rows-2 ">
     <div className="flex  shadow-xl rounded-xl mb-8 mt-6">
-      <h2 className="text-bold text-xl pr-12">Ingredients:</h2>
+      <h2 className=" font-bold text-xl pr-12">Ingredients:</h2>
       <ul>
         {recipe.ingredients.map((ingredient, index) => (
           <li key={index}>{ingredient}</li>
@@ -34,7 +34,7 @@ const RecipeDetail = () => {
       </ul>
       </div>
      <div className="flex shadow-xl rounded-xl mb-8 ">
-      <h2 className="text-bold text-xl">Instructions:</h2>
+      <h2 className="font-bold text-xl">Instructions:</h2>
       <ul>
         {recipe.instructions.map((instruction, index) => (
           <li key={index}>{instruction}</li>
