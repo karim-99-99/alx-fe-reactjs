@@ -1,0 +1,43 @@
+[
+    {
+      "id": 1,
+      "title": "Spaghetti Carbonara",
+      "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+      "image": "https://www.cookingclassy.com/wp-content/uploads/2020/10/roasted-spaghetti-squash-browned-butter-20.jpg",
+    "ingredients": [
+      "200g spaghetti",
+      "100g pancetta",
+      "2 large eggs",
+      "50g pecorino cheese",
+      "Black pepper"
+    ],
+    "instructions": [
+      "Boil the spaghetti until al dente.",
+      "Fry the pancetta until crispy.",
+      "Mix eggs and cheese in a bowl.",
+      "Combine pasta with pancetta, then mix with egg-cheese mixture.",
+      "Serve with black pepper on top."
+    ]
+    },
+    {
+      "id": 2,
+      "title": "Chicken Tikka Masala",
+      "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
+      "image": "https://www.cookinwithmima.com/wp-content/uploads/2022/07/chicken-spaghetti-bolognese.jpg",
+    "ingredients": [
+      "500g chicken breast",
+      "1 cup yogurt",
+      "1 tbsp garam masala",
+      "1 cup tomato puree",
+      "1/2 cup heavy cream"
+    ],
+    "instructions": [
+      "Marinate the chicken in yogurt and spices for 1 hour.",
+      "Grill the chicken until fully cooked.",
+      "Simmer tomato puree and spices in a pan.",
+      "Add grilled chicken and cream, then cook for 10 minutes.",
+      "Serve hot with rice or naan."
+    ]
+    }
+  ]
+  

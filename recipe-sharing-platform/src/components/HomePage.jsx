@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-
+import { Link } from "react-router-dom";
 const HomePage = () => {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    fetch("../src/data.json")
-      .then((responce) => responce.json())
+    fetch("/data.json")
+      .then((response) => response.json())
       .then((data) => setRecipes(data))
       .catch((error) => console.log("Error loading Data", error));
   }, []);
@@ -23,6 +23,7 @@ const HomePage = () => {
             />
             <h2 className="font-bold text-violet-500 m-2 text-xl"> {recipe.title} </h2>
             <p> {recipe.summary} </p>
+            <Link to={`/recipe/${recipe.id}`}> view Recipe</Link>
           </div>
         ))}
       </div>
