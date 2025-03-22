@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 const AddRecipeForm = () => {
- const [input ,setInput] = useState({title:"" , ingredients:"" , preparation:""});
+ const [input ,setInput] = useState({title:"" , ingredients:"" , steps:""});
 const handleChange = (e) => {
 const {name , value} =e.target
 setInput((prevState) => ({ ...prevState, [name]: value }));
@@ -33,8 +33,8 @@ value={input.ingredients}
 onChange={handleChange}
 />
 <textarea
-name="preparation"
-value={input.preparation}
+name="steps"
+value={input.steps}
 onChange={handleChange}
 />
 <button type="submit">submit</button>
