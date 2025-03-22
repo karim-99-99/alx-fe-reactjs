@@ -22,18 +22,18 @@ const RecipeDetail = () => {
   return (
     <div className="">
     
-      <img src={recipe.image} alt={recipe.title} className=" rounded-lg w-full sm:w-72 md:w-96 lg:w-auto justify-center mx-auto " />
+      <img src={recipe.image} alt={recipe.title} className=" rounded-lg w-full sm:w-72 md:w-96 lg:w-96 h-96 justify-center mx-auto " />
    
     <div className=" justify-stretch mx-auto grid grid-rows-2 ">
-    <div className="flex  shadow-xl rounded-xl mb-8 mt-6">
-      <h2 className=" font-bold text-xl pr-12">Ingredients:</h2>
+    <div className="flex-1  shadow-xl rounded-xl mb-8 mt-6">
+      <h2 className=" font-bold text-xl">Ingredients:</h2>
       <ul>
         {recipe.ingredients.map((ingredient, index) => (
           <li key={index}>{ingredient}</li>
         ))}
       </ul>
       </div>
-     <div className="flex shadow-xl rounded-xl mb-8 ">
+     <div className="flex-1 shadow-xl rounded-xl mb-8 ">
       <h2 className="font-bold text-xl">Instructions:</h2>
       <ul>
         {recipe.instructions.map((instruction, index) => (
