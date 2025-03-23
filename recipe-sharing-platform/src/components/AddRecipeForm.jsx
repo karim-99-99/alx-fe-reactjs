@@ -36,7 +36,7 @@ const AddRecipeForm = () => {
   };
   return (
     <form onSubmit={handleSubmit} className="">
-      <label className="block font-bold pb-2 pt-2 ">Title</label>
+      <label className="block font-bold pb-2 pt-2 text-lg ">Title</label>
       <input
         type="text"
         name="title"
@@ -45,7 +45,7 @@ const AddRecipeForm = () => {
         className="border-2 border-gray-400 p-2 w-full rounded-md "
       />
       {errors.title && <p>{errors.title}</p>}
-      <label className="block font-bold pb-2 pt-2">ingredients</label>
+      <label className="block font-bold pb-2 pt-2 text-lg">Ingredients</label>
 
       <textarea
         name="ingredients"
@@ -54,7 +54,7 @@ const AddRecipeForm = () => {
         className="border-2 border-gray-400 p-2 w-full rounded-md "
       />
       {errors.ingredients && <p>{errors.ingredients}</p>}
-      <label className="block font-bold pb-2 pt-2 ">steps</label>
+      <label className="block font-bold pb-2 pt-2 text-lg ">steps</label>
       <textarea
         name="steps"
         value={input.steps}
@@ -62,7 +62,7 @@ const AddRecipeForm = () => {
         className="border-2 border-gray-400 p-2 w-full rounded-md "
       />
       {errors.steps && <p>{errors.steps}</p>}
-      <button type="submit" className=" shadow-md rounded-xl bg-blue-300 p-2 font-bold mt-3 w-full">submit</button>
+      <button type="submit" className=" shadow-md rounded-xl bg-blue-300 p-2 font-bold mt-3 w-full text-xl">submit</button>
     </form>
   );
 };
