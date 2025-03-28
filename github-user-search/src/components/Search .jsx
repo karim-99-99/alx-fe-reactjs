@@ -6,6 +6,8 @@ const Search = () => {
   const [username, setUsername] = useState("");
   const [userData, setUserData] = useState(null);
   const [error, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
+
 
   // Handle input change
   const handleChange = (e) => {
@@ -15,11 +17,14 @@ const Search = () => {
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // Set loading state
+    setUserData(null); // Reset previous user data
 
     const newErrors = {};
     if (!username.trim()) {
       newErrors.name = "Enter UserName";
       setErrors(newErrors); // ✅ Fix error state update
+      setLoading(false);
       return;
     }
 
@@ -29,6 +34,8 @@ const Search = () => {
       setErrors({}); // ✅ Clear previous errors if successful
     } catch (err) {
       setErrors({ api: "User not found or API error" }); // ✅ Fix error handling
+    } finally {
+        setLoading(false);
     }
   };
 
@@ -46,6 +53,7 @@ const Search = () => {
 
       {/* Display Form Validation Error */}
       {error.name && <p style={{ color: "red" }}>{error.name}</p>}
+      {loading && <p>Loading...</p>}
 
       {/* Display API Error */}
       {error.api && <p style={{ color: "red" }}>{error.api}</p>}
