@@ -33,7 +33,7 @@ const Search = () => {
       setUserData(data);
       setErrors({}); // ✅ Clear previous errors if successful
     } catch (err) {
-      setErrors({ api: "User not found or API error" }); // ✅ Fix error handling
+      setErrors({ api: "Looks like we cant find the user" }); // ✅ Fix error handling
     } finally {
         setLoading(false);
     }
