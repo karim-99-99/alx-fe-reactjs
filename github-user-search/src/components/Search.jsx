@@ -3,7 +3,7 @@ import { fetchUserData } from "../services/githubService";
 
 const Search = () => {
   // State for form input and errors
-  const [username, setUsername] = useState("");
+  const [input, setInput] = useState({username:"" ,location:"" ,minRepos:"" });
   const [userData, setUserData] = useState(null);
   const [error, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
@@ -11,7 +11,8 @@ const Search = () => {
 
   // Handle input change
   const handleChange = (e) => {
-    setUsername(e.target.value);
+    const {name , value} = e.target
+    setInput((prevState) => ({...prevState , [name] : value}));
   };
 
   // Handle form submission
@@ -21,7 +22,7 @@ const Search = () => {
     setUserData(null); // Reset previous user data
 
     const newErrors = {};
-    if (!username.trim()) {
+    if (!input.username.trim()) {
       newErrors.name = "Enter UserName";
       setErrors(newErrors); // ✅ Fix error state update
       setLoading(false);
@@ -29,10 +30,14 @@ const Search = () => {
     }
 
     try {
-      const data = await fetchUserData(username);
+      const data = await fetchUserData(input.username);
+      if ( input .location && data.location ?.tolowerCase() !== input.location?.toLowerCase()) {
+        setErrors({api :"not matching" }); // ✅ Clear previous errors if successful
+      } else {
       setUserData(data);
-      setErrors({}); // ✅ Clear previous errors if successful
-    } catch (err) {
+    }
+    } catch (error) {
+      console.error("Looks like we cant find the user :", error);
       setErrors({ api: "Looks like we cant find the user" }); // ✅ Fix error handling
     } finally {
         setLoading(false);
@@ -44,15 +49,32 @@ const Search = () => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
+          name="username"
           placeholder="Enter GitHub Username"
-          value={username}
+          value={input.username}
+          onChange={handleChange}
+        />
+              {error.name && <p style={{ color: "red" }}>{error.name}</p>}
+
+         <input
+          type="text"
+          name="location"
+          placeholder="Enter Location"
+          value={input.location}
+          onChange={handleChange}
+        />
+        
+        <input
+          type="text"
+          name="minRepos"
+          placeholder="Enter minRepos"
+          value={input.minRepos}
           onChange={handleChange}
         />
         <button type="submit">Submit</button>
       </form>
 
       {/* Display Form Validation Error */}
-      {error.name && <p style={{ color: "red" }}>{error.name}</p>}
       {loading && <p>Loading...</p>}
 
       {/* Display API Error */}
@@ -63,6 +85,7 @@ const Search = () => {
         <div>
           <h2>{userData.name || userData.login}</h2>
           <img src={userData.avatar_url} alt="Profile" width="100" />
+          <p className="text-gray-600">Location: {userData.location || "Not Available"}</p>
           <p>Followers: {userData.followers}</p>
           <p>Repositories: {userData.public_repos}</p>
           <a href={userData.html_url} target="_blank" rel="noopener noreferrer">
